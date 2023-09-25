@@ -3,6 +3,7 @@ import { auth, provider } from "../config/firebase"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { signInWithPopup } from "firebase/auth";
 import { signOut } from "firebase/auth";
+import { NavLink } from "react-router-dom"
 
 export default function Navbar(){
 
@@ -19,8 +20,8 @@ export default function Navbar(){
 
 
     return(
-        <div>
-            {!user && 
+        <>
+            {!user && //because the user becomes true when logged in it will no longer display the login button
             <div>
             <button onClick={signInWithGoogle}>Login</button>
             </div>}
@@ -28,13 +29,17 @@ export default function Navbar(){
             {user && 
             <div>
             <p>{user?.displayName}</p>
-            <img src={user?.photoURL || ""} width={30} height={30}/>
+            <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} width={30} height={30}/>
             </div>}
 
             {user && 
             <div>
             <button onClick={signUserOut}>Log Out</button>
             </div>}
-        </div>
+
+            {user && <NavLink to={"/CreatePost"}> Create </NavLink>}
+            
+
+        </>
     )
 }
