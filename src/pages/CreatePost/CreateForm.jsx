@@ -2,11 +2,13 @@ import React from "react";
 import {useForm} from "react-hook-form"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
-import {addDoc, collection} from "firebase/firestore"
+import {Timestamp, addDoc, collection,serverTimestamp} from "firebase/firestore"
 import { auth, db } from "../../config/firebase"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useNavigate } from "react-router-dom";
 export default function CreateForm(){
+
+    const updated_at_timestamp = serverTimestamp() //creates a timestamp
 
     const [user] = useAuthState(auth)
 
@@ -29,8 +31,10 @@ export default function CreateForm(){
         await addDoc(postsRef, {
             ...data,
             username: user?.displayName,
-            userId: user?.uid
+            userId: user?.uid, 
+            time: updated_at_timestamp /* sets the timestamp upon creation */
         })
+        console.log(postsRef)
         navigate("/")
     }
 
