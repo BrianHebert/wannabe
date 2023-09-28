@@ -7,18 +7,13 @@ import Post from "./DisplayPosts.jsx"
 
 export default function Home(){
     const [postsList, setPostsList] = React.useState(null)
-    const postsRef = collection(db, "posts")
+    const postsRef = collection(db, "posts") //fetches posts documents
+
     async function getPosts(){
-        
         const test = query(postsRef, orderBy("time", "desc")) //sorts by timestamp
         const data = await getDocs(test)
-        
         setPostsList(data.docs.map((doc) => ({...doc.data(), id: doc.id}))) //pulls out the data that i actually need from firebase
-       
-        
     }
-    
-    
 
     useEffect(() => {
         getPosts()

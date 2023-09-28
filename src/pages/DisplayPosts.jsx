@@ -27,7 +27,7 @@ export default function Post(props){
             </NavLink>
         </section>
 
-        { props.post.userId == user.uid &&
+        { props.post.userId == user?.uid &&
             <NavLink to= "/EditPost" state={{docId: props.post.id}}>EditPost</NavLink>
         }
 

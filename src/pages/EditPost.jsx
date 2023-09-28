@@ -8,15 +8,6 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, db } from "../config/firebase.js"
 import Navbar from "../components/navbar.jsx"
 export default function EditPost(props) {
-    const [editTitle, setEditTitle] = React.useState(false)
-    function changeTitle(){
-        setEditTitle(prevState => !prevState)
-    }
-
-    const [editDesc, seteditDesc] = React.useState(false)
-    function changeDesc(){
-        seteditDesc(prevState => !prevState)
-    }
     
     const location = useLocation();
     const { docId } = location.state; 
@@ -57,11 +48,18 @@ export default function EditPost(props) {
         ...data
     })
 
-
     navigate("/")
     }
     
-    
+    const [editTitle, setEditTitle] = React.useState(false)
+    function changeTitle(){
+        setEditTitle(prevState => !prevState)
+    }
+
+    const [editDesc, seteditDesc] = React.useState(false)
+    function changeDesc(){
+        seteditDesc(prevState => !prevState)
+    }
 
     return (
         <>
