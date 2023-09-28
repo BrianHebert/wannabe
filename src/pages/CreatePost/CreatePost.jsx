@@ -8,7 +8,7 @@ export default function CreatePost(){
     return(
         <div>
             <Navbar />
-            create post
+            <h1>create post</h1>
             <CreateForm />
         </div>
     )

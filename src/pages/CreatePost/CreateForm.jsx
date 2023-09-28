@@ -16,7 +16,7 @@ export default function CreateForm(){
 
     const schema = yup.object().shape({
         title: yup.string().required("You must add a title."),
-        description: yup.string().max(500)
+        description: yup.string()
 
     })
 

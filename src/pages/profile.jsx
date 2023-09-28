@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/navbar.jsx"
+import Navbar from "../components/navbar.jsx"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { addDoc, collection, serverTimestamp, getDocs,  orderBy, query, where  } from "firebase/firestore"
-import { auth, db } from "../../config/firebase.js"
+import { auth, db } from "../config/firebase.js"
 import { useLocation } from "react-router-dom"
 import { reach } from "yup"
-import Post from "../Home/post.jsx"
+import Post from "./DisplayPosts.jsx"
+
 
 
 
@@ -31,6 +32,7 @@ export default function Profile(props){
 
     return(
         <>
+        <Navbar />
         { clickedUser == user?.uid && //if the user wants to look at thier own profle this is what will show up
         <div>
         <p>{user?.displayName}</p>

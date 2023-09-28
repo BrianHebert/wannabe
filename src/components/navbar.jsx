@@ -4,6 +4,11 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { signInWithPopup } from "firebase/auth";
 import { signOut } from "firebase/auth";
 import { NavLink } from "react-router-dom"
+import styled from "styled-components";
+
+const NavbarStyle = styled.div`
+   border-bottom: black 2px solid;
+`
 
 export default function Navbar(){
 
@@ -20,7 +25,8 @@ export default function Navbar(){
 
 
     return(
-        <>
+        <NavbarStyle>
+            <NavLink to= "/" reloadDocument><h1>HOME</h1></NavLink>
             {!user && //because the user becomes true when logged in it will no longer display the login button
             <div>
             <button onClick={signInWithGoogle}>Login</button>
@@ -43,6 +49,6 @@ export default function Navbar(){
             {user && <NavLink to= "/CreatePost"> Create </NavLink>}
             
 
-        </>
+        </NavbarStyle>
     )
 }
