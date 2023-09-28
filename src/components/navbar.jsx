@@ -1,5 +1,5 @@
 import React from "react";
-import { auth, provider } from "../config/firebase"
+import { auth, provider } from "../config/firebase.js"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { signInWithPopup } from "firebase/auth";
 import { signOut } from "firebase/auth";
@@ -9,7 +9,7 @@ export default function Navbar(){
 
     async function signInWithGoogle(){
         const result = await signInWithPopup(auth, provider)
-        console.log(result)
+        
     }
 
     const [user] = useAuthState(auth)
@@ -29,15 +29,18 @@ export default function Navbar(){
             {user && 
             <div>
             <p>{user?.displayName}</p>
+            <NavLink to= "/Profile">
             <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} width={30} height={30}/>
+            </NavLink>
             </div>}
+            
 
             {user && 
             <div>
             <button onClick={signUserOut}>Log Out</button>
             </div>}
 
-            {user && <NavLink to={"/CreatePost"}> Create </NavLink>}
+            {user && <NavLink to= "/CreatePost"> Create </NavLink>}
             
 
         </>

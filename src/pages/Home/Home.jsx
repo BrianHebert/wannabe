@@ -23,8 +23,8 @@ export default function Home(){
         getPosts()
     }, [])
 
-    console.log(postsList)
-    let sortPostsList = postsList
+   
+    
     return(
         
         <div>

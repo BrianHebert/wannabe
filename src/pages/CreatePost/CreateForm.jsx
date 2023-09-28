@@ -1,9 +1,9 @@
 import React from "react";
-import {useForm} from "react-hook-form"
+import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
-import {Timestamp, addDoc, collection,serverTimestamp} from "firebase/firestore"
-import { auth, db } from "../../config/firebase"
+import { addDoc, collection, serverTimestamp } from "firebase/firestore"
+import { auth, db } from "../../config/firebase.js"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useNavigate } from "react-router-dom";
 export default function CreateForm(){
@@ -27,14 +27,15 @@ export default function CreateForm(){
     const postsRef = collection(db, "posts")
 
     async function onCreatePost(data){
-        console.log(data)
+        
         await addDoc(postsRef, {
             ...data,
             username: user?.displayName,
             userId: user?.uid, 
-            time: updated_at_timestamp /* sets the timestamp upon creation */
+            time: updated_at_timestamp, /* sets the timestamp upon creation */
+            pfp: user?.photoURL
         })
-        console.log(postsRef)
+        
         navigate("/")
     }
 

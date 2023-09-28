@@ -1,7 +1,8 @@
 import React from "react"
+import { NavLink } from "react-router-dom"
 
 export default function Post(props){
-    console.log(props.post)
+    
     return(
         <>
         <div>
@@ -11,7 +12,13 @@ export default function Post(props){
             <p>{props.post.description}</p>
         </article>
         <section>
+        <NavLink to= "/Profile" state={{clickedUser: props.post.userId}}>
             <p>@{props.post.username}</p>
+        </NavLink> 
+
+        <NavLink to= "/Profile" state={{clickedUser: props.post.userId}}>
+        {props.post.pfp!=null && <img  referrerPolicy="no-referrer" src={props.post.pfp || ""} width={30} height={30}/>}
+        </NavLink>
         </section>
 
         </>
