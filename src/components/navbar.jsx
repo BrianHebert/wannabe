@@ -34,8 +34,8 @@ export default function Navbar(){
 
             {user && 
             <div>
+            <NavLink to= "/Profile" state={{clickedUser: user?.uid}}>
             <p>{user?.displayName}</p>
-            <NavLink to= "/Profile">
             <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} width={30} height={30}/>
             </NavLink>
             </div>}
