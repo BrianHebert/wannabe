@@ -1,7 +1,7 @@
 import { set, useForm } from "react-hook-form"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
-import { doc, getDoc, updateDoc} from "firebase/firestore"
+import { doc, getDoc, updateDoc, deleteDoc} from "firebase/firestore"
 import React from "react";
 import { useLocation, NavLink, useNavigate } from "react-router-dom"
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -47,10 +47,14 @@ export default function EditPost(props) {
     updateDoc(editRef,{
         ...data
     })
-
     navigate("/")
     }
-    
+
+    async function deletePost(){
+        deleteDoc(doc(db, "posts", docId))
+        navigate("/")
+         
+    }
     const [editTitle, setEditTitle] = React.useState(false)
     function changeTitle(){
         setEditTitle(prevState => !prevState)
@@ -90,6 +94,8 @@ export default function EditPost(props) {
                 {postToEdit?.pfp!=null && <img  referrerPolicy="no-referrer" src={postToEdit?.pfp || ""} width={30} height={30}/>}
             </NavLink>
         </section>
+
+        <button type="button" onClick={deletePost}>delete post</button>
 
         <input type="submit"></input>
         </form>
