@@ -1,32 +1,59 @@
 import React from "react";
-import { auth, provider } from "../config/firebase.js"
+import { auth, provider, db } from "../config/firebase.js"
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, onAuthStateChanged, reload } from "firebase/auth";
 import { signOut } from "firebase/auth";
 import { NavLink } from "react-router-dom"
 import styled from "styled-components";
+import {  collection, getDocs,  query, where } from "firebase/firestore"
+import { useNavigate } from "react-router-dom";
 
 const NavbarStyle = styled.div`
    border-bottom: black 2px solid;
 `
 
-export default function Navbar(){
+export default function Navbar(props){
+
+    const navigate = useNavigate()
 
     async function signInWithGoogle(){
         const result = await signInWithPopup(auth, provider)
         
     }
 
-    const [user] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth) //loading determines if the user information is ready to be read yet
+
+
     async function signUserOut (){
         await signOut(auth)
 
     }
+    
 
+    //gets the username
+    const usersRef = collection(db, "users") //fetches posts documents
+
+    const [displayName, setDisplayName] = React.useState("this works if i put litearlly anything in it")
+
+    let nameDisplayed = displayName[0].displayName
+
+    async function getUser(){ 
+        const test = query(usersRef, where("userId" , "==" , user?.uid))
+        const data = await getDocs(test)
+        setDisplayName(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+    }
+
+
+    
 
     return(
-        <NavbarStyle>
-            <NavLink to= "/" reloadDocument><h1>HOME</h1></NavLink>
+        <>{loading == true &&
+        <></>
+        }
+
+        {loading == false &&
+        <NavbarStyle onLoad={getUser}>
+            <NavLink to= "/"><h1>HOME</h1></NavLink>
             {!user && //because the user becomes true when logged in it will no longer display the login button
             <div>
             <button onClick={signInWithGoogle}>Login</button>
@@ -35,7 +62,7 @@ export default function Navbar(){
             {user && 
             <div>
             <NavLink to= "/Profile" state={{clickedUser: user?.uid}}>
-            <p>{user?.displayName}</p>
+            <p>{nameDisplayed}</p>
             <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} width={30} height={30}/>
             </NavLink>
             </div>}
@@ -47,8 +74,9 @@ export default function Navbar(){
             </div>}
 
             {user && <NavLink to= "/CreatePost"> Create </NavLink>}
-            
-
         </NavbarStyle>
+        }
+        </>
+        
     )
 }

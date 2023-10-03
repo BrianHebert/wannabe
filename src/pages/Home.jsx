@@ -13,6 +13,7 @@ export default function Home(){
         const test = query(postsRef, orderBy("time", "desc")) //sorts by timestamp
         const data = await getDocs(test)
         setPostsList(data.docs.map((doc) => ({...doc.data(), id: doc.id}))) //pulls out the data that i actually need from firebase
+        
     }
 
     useEffect(() => {

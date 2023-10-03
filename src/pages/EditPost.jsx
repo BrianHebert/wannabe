@@ -55,6 +55,7 @@ export default function EditPost(props) {
         navigate("/")
          
     }
+    
     const [editTitle, setEditTitle] = React.useState(false)
     function changeTitle(){
         setEditTitle(prevState => !prevState)
