@@ -62,7 +62,7 @@ export default function Profile(props){
     async function findDocIdInUsers(){
         const test = query(usersRef, where("userId" , "==" , clickedUser))
         const data = await getDocs(test)
-        console.log(data)
+       
         setDisplayName(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
     }
     useEffect(() => {

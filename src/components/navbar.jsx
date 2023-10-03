@@ -35,7 +35,7 @@ export default function Navbar(props){
 
     const [displayName, setDisplayName] = React.useState("this works if i put litearlly anything in it")
 
-    let nameDisplayed = displayName[0].displayName
+    let nameDisplayed = ""
 
     async function getUser(){ 
         const test = query(usersRef, where("userId" , "==" , user?.uid))
@@ -43,6 +43,12 @@ export default function Navbar(props){
         setDisplayName(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
     }
 
+    if(displayName[0] != null){
+        nameDisplayed = displayName[0].displayName
+    }
+    else{
+        nameDisplayed = user?.displayName
+    }
 
     
 
