@@ -1,0 +1,11 @@
+.searchSubmit {
+    background-color: aquamarine;
+}
+.searchResults{
+    all: initial;
+    display: block;
+    background-color: bisque;
+}
+.bitconfused{
+    all: initial;
+}

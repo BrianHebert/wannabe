@@ -59,7 +59,7 @@ export default function Navbar(props){
 
         {loading == false &&
         <NavbarStyle onLoad={getUser}>
-            <NavLink to= "/"><h1>HOME</h1></NavLink>
+            <NavLink to={'/'} onClick={() => window.location='/'.reload()}><h1>HOME</h1></NavLink>
             {!user && //because the user becomes true when logged in it will no longer display the login button
             <div>
             <button onClick={signInWithGoogle}>Login</button>
@@ -67,7 +67,7 @@ export default function Navbar(props){
 
             {user && 
             <div>
-            <NavLink to= "/Profile" state={{clickedUser: user?.uid}}>
+            <NavLink to= "/Profile" state={{clickedUser: user?.uid}} onClick={() => window.location.reload()}>
             <p>{nameDisplayed}</p>
             <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} width={30} height={30}/>
             </NavLink>
