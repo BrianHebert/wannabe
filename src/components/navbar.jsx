@@ -113,7 +113,7 @@ export default function Navbar(props){
 
             {user && 
             <div>
-            <NavLink to= "/Profile" state={{clickedUser: user?.uid}} >
+            <NavLink to= "/Profile" state={{clickedUser: user?.uid}}>
             <div className="imgContainer"> <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} /></div>
             <h1 className="profile">Profile</h1>
             </NavLink>

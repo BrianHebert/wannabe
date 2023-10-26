@@ -10,6 +10,7 @@ import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom";
+import "./profile.css"
 
 
 
@@ -17,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Profile(props){
     const location = useLocation();
-    const { clickedUser } = location.state
+    const { clickedUser, clickedName, clickedPicture} = location.state
     const [user, loading] = useAuthState(auth)
     const navigate = useNavigate()
 
@@ -77,7 +78,6 @@ export default function Profile(props){
         
     }
     
-    
     async function updateDisplayName(data){
         await updateDoc(updateName,
         {
@@ -111,8 +111,6 @@ export default function Profile(props){
         
     }
 
-
-
     if(currentDisplayName[0] != null){
         nameDisplayed = currentDisplayName[0].displayName
     }
@@ -129,8 +127,9 @@ export default function Profile(props){
         }
         {loading == false &&
         < div onLoad={getUser}>
-        { clickedUser == user?.uid && 
-        <div>
+
+        { clickedUser == user?.uid && //if the user is looking at their own profile
+        <div className="everythingProfile" onLoad={getPosts}>
 
         {createOrUpdate == false && <form onSubmit={handleSubmit(createDisplayName)}>
         <input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]} placeholder="displayName..." {...register("displayName")}/> {/* the onclick function calls it after the displayName state is updated */}
@@ -141,16 +140,19 @@ export default function Profile(props){
         <button>Change Display Name</button>    
         </form>
         }
-        <p>{nameDisplayed}</p>
+        <h1>{nameDisplayed}</h1>
         <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} width={30} height={30}/>
         </div>
+        
         }
 
-        { //if the user wants to look at a profile this will show up
+        { clickedUser != user?.uid && //if the user wants to look at a profile this will show up
         <div>
-            {postsList?.map((post) => (<Post key={post.id} post={post}/> ))} {/*this loops through every post in the postLists array and returns the post component */}
+            <h1>{clickedName}</h1>
+            <img  referrerPolicy="no-referrer" src={ clickedPicture || ""} className="pfp"/>
         </div>
         }
+        {postsList?.map((post) => (<Post key={post.id} post={post}/> ))} {/*this loops through every post in the postLists array and returns the post component */}
         </div>
         }
         </>

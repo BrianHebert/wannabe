@@ -39,10 +39,10 @@ export default function Post(props){
     return(
         <div className="singlePost">
         <section>
-            <NavLink to= "/Profile" state={{clickedUser: props.post.userId}}>
+            <NavLink to= "/Profile" state={{clickedUser: props.post.userId, clickedName: nameDisplayed, clickedPicture: props.post.pfp}}>
                 {props.post.pfp!=null && <img  referrerPolicy="no-referrer" src={props.post.pfp || ""} className="pfp"/>}
             </NavLink>
-            <NavLink to= "/Profile" state={{clickedUser: props.post.userId}}>
+            <NavLink to= "/Profile" state={{clickedUser: props.post.userId, clickedName: nameDisplayed, clickedPicture: props.post.pfp}}>
                 <p className="username">@{nameDisplayed}</p>
             </NavLink> 
         </section>
