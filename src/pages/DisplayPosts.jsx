@@ -4,6 +4,8 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { getDocs, where, collection, query} from "firebase/firestore"
 import { auth, db } from "../config/firebase.js"
 import { set } from "react-hook-form"
+import "./displayposts.css"
+
 
 export default function Post(props){
     
@@ -35,28 +37,27 @@ export default function Post(props){
     }
 
     return(
-        <>
+        <div className="singlePost">
+        <section>
+            <NavLink to= "/Profile" state={{clickedUser: props.post.userId}}>
+                {props.post.pfp!=null && <img  referrerPolicy="no-referrer" src={props.post.pfp || ""} className="pfp"/>}
+            </NavLink>
+            <NavLink to= "/Profile" state={{clickedUser: props.post.userId}}>
+                <p className="username">@{nameDisplayed}</p>
+            </NavLink> 
+        </section>
         <div>
-            <h1>{props.post.title}</h1>
+            <h1 className="postTitle">{props.post.title}</h1>
         </div>
 
         <article>
-            <p>{props.post.description}</p>
+            <p className="postDescription">{props.post.description}</p>
         </article>
-
-        <section>
-            <NavLink to= "/Profile" state={{clickedUser: props.post.userId}}>
-                <p>@{nameDisplayed}</p>
-            </NavLink> 
-            <NavLink to= "/Profile" state={{clickedUser: props.post.userId}}>
-                {props.post.pfp!=null && <img  referrerPolicy="no-referrer" src={props.post.pfp || ""} width={30} height={30}/>}
-            </NavLink>
-        </section>
 
         { props.post.userId == user?.uid &&
             <NavLink to= "/EditPost" state={{docId: props.post.id}}>EditPost</NavLink>
         }
 
-        </>
+        </div>
     )
 }

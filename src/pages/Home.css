@@ -1,5 +1,25 @@
-.searchSubmit {
-    background-color: aquamarine;
+body{
+    display: block;
+}
+.allOfSearch {
+    position: fixed;
+    right: 8px;
+    border: red solid 2px;
+    width: 20%;
+
+    
+}
+.searchInput{
+    font-size: 1vw;
+    height: 1.5vw;
+    width: 60%;
+    float: left;
+    
+    
+}
+.searchSubmit{
+    height: 1.5vw;
+    float: left;
 }
 .searchResults{
     all: initial;
@@ -8,4 +28,7 @@
 }
 .bitconfused{
     all: initial;
+}
+.allPosts{
+    border: red solid 2px;
 }

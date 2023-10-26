@@ -9,7 +9,53 @@ import {  collection, getDocs,  query, where } from "firebase/firestore"
 import { useNavigate } from "react-router-dom";
 
 const NavbarStyle = styled.div`
-   border-bottom: black 2px solid;
+   border: black 2px solid;
+   float: left;
+   width: 20%;
+   height: 100%;
+   position: fixed;
+  
+   h1{
+    font-size: 1.5vw;
+    margin-top:0px;
+    width: 26%;
+   
+   }
+
+   .home{
+    float: right;
+  
+   }
+
+   .profile{
+    float: right;
+
+    clear: right;
+   }
+
+   .imgContainer{
+    width: 26%;
+    float: right;
+    clear: right;
+
+   }
+   
+   img{
+    float: left;
+    width: 85%;
+   }
+
+   .logout{
+    float: right;
+    clear: right;
+
+   }
+
+   .create{
+    float: right;
+    clear: right;
+
+   }
 `
 
 export default function Navbar(props){
@@ -59,7 +105,7 @@ export default function Navbar(props){
 
         {loading == false &&
         <NavbarStyle onLoad={getUser}>
-            <NavLink to={'/'} onClick={() => window.location='/'.reload()}><h1>HOME</h1></NavLink>
+            <NavLink to={'/'} onClick={() => window.location='/'.reload()}><h1 className="home">HOME</h1></NavLink>
             {!user && //because the user becomes true when logged in it will no longer display the login button
             <div>
             <button onClick={signInWithGoogle}>Login</button>
@@ -67,19 +113,20 @@ export default function Navbar(props){
 
             {user && 
             <div>
-            <NavLink to= "/Profile" state={{clickedUser: user?.uid}} onClick={() => window.location.reload()}>
-            <p>{nameDisplayed}</p>
-            <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} width={30} height={30}/>
+            <NavLink to= "/Profile" state={{clickedUser: user?.uid}} >
+            <div className="imgContainer"> <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} /></div>
+            <h1 className="profile">Profile</h1>
             </NavLink>
             </div>}
             
+            {user && <NavLink to= "/CreatePost"> <h1 className="create">Create</h1> </NavLink>}
 
             {user && 
             <div>
-            <button onClick={signUserOut}>Log Out</button>
+            <h1 className="logout" onClick={signUserOut}>Logout</h1>
             </div>}
 
-            {user && <NavLink to= "/CreatePost"> Create </NavLink>}
+            
         </NavbarStyle>
         }
         </>

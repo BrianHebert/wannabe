@@ -83,8 +83,13 @@ export default function Home(){
             <InstantSearch searchClient={searchClient} indexName="posts">
             <SearchBox
                 classNames={{
-                    submit: 'searchSubmit'
+                    root: "allOfSearch",
+                    input: "searchInput",
+                    submit: 'searchSubmit',
+                    reset: "searchReset"
+                    
                 }}
+                placeholder="Search for posts"
                 queryHook={queryHook}
                 
             />
@@ -99,9 +104,9 @@ export default function Home(){
             </InstantSearch>
 
             {!searched &&
-            <>
+            <div className="allPosts">
             {postsList?.map((post) => (<Post key={post.id} post={post}/> ))} {/*this loops through every post in the postLists array and returns the post component */}
-            </>
+            </div>
             }
         </div>
     )

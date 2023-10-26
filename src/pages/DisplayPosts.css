@@ -1,0 +1,52 @@
+@media (min-width: 1280px){
+.singlePost{
+    border: purple solid 2px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+section{
+    display: flex;
+}
+.pfp{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0px;
+    
+}
+.username{
+    display: flex;
+    margin-top: 3px;
+    margin-left: 3px;
+    font-size: 18px;
+    margin-bottom: 0px;
+
+}
+}
+.postTitle{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+.postDescription{
+    margin-top: 5px;
+
+}
+
+@media (max-width: 1279px){
+    .singlePost{
+        border: purple solid 2px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (max-width: 600px){
+    .singlePost{
+        border: purple solid 2px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
