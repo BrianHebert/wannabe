@@ -35,29 +35,29 @@ export default function Home(){
     function Hit({ hit }) {
         
         return (
-          <article>
+            <div className="post">
+            
+            <section>
+                <NavLink to= "/Profile" state={{clickedUser: hit.userId, clickedName: hit.username, clickedPicture:hit.pfp}}>
+                    {hit.pfp!=null && <img  referrerPolicy="no-referrer" src={hit.pfp || ""} className="pfp"/>}
+                </NavLink>
+                <NavLink to= "/Profile" state={{clickedUser: hit.userId, clickedName: hit.username, clickedPicture:hit.pfp}}>
+                    <p className="username">@{hit.username}</p>
+                </NavLink> 
+            </section>
+
             <div>
-            <h1>{hit.title}</h1>
-        </div>
+                <h1 className="postTitle">{hit.title}</h1>
+            </div>
+            <div>
+                <p className="postDescription">{hit.description}</p>
+            </div>
 
-        <article>
-            <p>{hit.description}</p>
-        </article>
-
-        <section>
-            <NavLink to= "/Profile" state={{clickedUser: hit.userId}}>
-                <p>@{hit.username}</p>
-            </NavLink> 
-            <NavLink to= "/Profile" state={{clickedUser: hit.userId}}>
-                {hit.pfp!=null && <img  referrerPolicy="no-referrer" src={hit.pfp || ""} width={30} height={30}/>}
-            </NavLink>
-        </section>
-
-        { hit.userId == user?.uid &&
-            <NavLink to= "/EditPost" state={{docId: hit.objectID}}>EditPost</NavLink>
-        }
-          </article>
-        );
+            { hit.userId == user?.uid &&
+                <NavLink to= "/EditPost" state={{docId: hit.objectID}}>EditPost</NavLink>
+            }
+            </div>
+            );
       }
 
       const [searched, setSearched] = React.useState(false)
