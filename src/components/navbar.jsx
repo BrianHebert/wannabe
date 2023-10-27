@@ -9,6 +9,7 @@ import {  collection, getDocs,  query, where } from "firebase/firestore"
 import { useNavigate } from "react-router-dom";
 
 const NavbarStyle = styled.div`
+@media (min-width: 1280px){
    border: black 2px solid;
    float: left;
    width: 20%;
@@ -19,7 +20,6 @@ const NavbarStyle = styled.div`
     font-size: 1.5vw;
     margin-top:0px;
     width: 26%;
-   
    }
 
    .home{
@@ -54,8 +54,73 @@ const NavbarStyle = styled.div`
    .create{
     float: right;
     clear: right;
+   }
+}
+
+
+@media (max-width: 1279px) and (min-width: 901px){
+   border: black 2px solid;
+   float: left;
+   width: 13%;
+   height: 100%;
+   position: fixed;
+  
+   h1{
+    font-size: 2vw;
+    margin-top: 0px;
+    width: 50%;
+   }
+
+   .home{
+    float: right;
+   }
+
+   .profile{
+    float: right;
+    clear: right;
+   }
+
+   .imgContainer{
+    float: right;
+    clear: right;
+    width: 50%;
+   }
+   
+   img{
+    float: left;
+    width: 85%;
+   }
+
+   .logout{
+    float: right;
+    clear: right;
 
    }
+
+   .create{
+    float: right;
+    clear: right;
+   }
+}
+
+@media (max-width: 900px){
+    border: solid red 2px;
+    h1{
+        font-size: 4vw;
+        margin-top: 0px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .imgContainer{
+        display: none;
+    }
+    .everythingInNavbar{
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
 `
 
 export default function Navbar(props){
@@ -105,6 +170,7 @@ export default function Navbar(props){
 
         {loading == false &&
         <NavbarStyle onLoad={getUser}>
+            <div className="everythingInNavbar">
             <NavLink to={'/'} onClick={() => window.location='/'.reload()}><h1 className="home">HOME</h1></NavLink>
             {!user && //because the user becomes true when logged in it will no longer display the login button
             <div>
@@ -125,6 +191,7 @@ export default function Navbar(props){
             <div>
             <h1 className="logout" onClick={signUserOut}>Logout</h1>
             </div>}
+            </div>
 
             
         </NavbarStyle>

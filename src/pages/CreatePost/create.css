@@ -1,0 +1,105 @@
+@media (min-width: 1280px){
+.createText{
+    
+    width: 50%;
+    font-size: 3vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.titleTextbox{
+    width: 50%;
+    padding: 0%;
+    display: block;
+    font-size: 1.5vw;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.descriptionTextBox{
+    width: 50%;
+    font-size: .8vw;
+    padding: 0%;
+    height: 6vw;
+    display: block;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.createSubmit{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+@media (max-width: 1279px) and (min-width: 901px){
+    .createText{
+        
+        width: 65%;
+        font-size: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .titleTextbox{
+        width: 65%;
+        display: block;
+        font-size: 3vw;
+        margin-bottom: 10px;
+        padding: 0%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .descriptionTextBox{
+        width: 65%;
+        font-size: 1.6vw;
+        height: 10vw;
+        padding: 0%;
+        display: block;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .createSubmit{
+        width: 65%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 900px){
+    .createText{
+        width: 80%;
+        font-size: 8vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .titleTextbox{
+        width: 80%;
+        border: red solid 2px;
+        padding: 0%;
+        display: block;
+        font-size: 5vw;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .descriptionTextBox{
+        width: 80%;
+        border: red solid 2px;
+        padding: 0%;
+        font-size: 3vw;
+        height: 15vw;
+        display: block;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .createSubmit{
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

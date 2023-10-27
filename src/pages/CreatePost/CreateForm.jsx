@@ -15,7 +15,7 @@ export default function CreateForm(){
     const navigate = useNavigate()
 
     const schema = yup.object().shape({
-        title: yup.string().required("You must add a title."),
+        title: yup.string(),
         description: yup.string()
 
     })
@@ -62,10 +62,9 @@ export default function CreateForm(){
     return(
         <form onSubmit={handleSubmit(onCreatePost)}>
             {" "}
-            <input onClick={getUser }placeholder="Title..." {...register("title")}/>
-            <p style={{color: "red"}}>{errors.title?.message}</p>
-            <textarea placeholder="Description..."{...register("description")}/>
-            <input type="submit" />
+            <input className="titleTextbox" onClick={getUser }placeholder="Title..." {...register("title")} required/>
+            <textarea className="descriptionTextBox" placeholder="Description..."{...register("description")}/>
+            <input className="createSubmit" type="submit" />
         </form>
     )
 }
