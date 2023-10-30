@@ -7,6 +7,8 @@ import { useLocation, NavLink, useNavigate } from "react-router-dom"
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, db } from "../config/firebase.js"
 import Navbar from "../components/navbar.jsx"
+import "./editpost.css"
+
 export default function EditPost(props) {
     
     const location = useLocation();
@@ -69,37 +71,44 @@ export default function EditPost(props) {
     return (
         <>
         <Navbar />
-        <form onSubmit={handleSubmit(editButton)}>
-        <div>
-            <h1>{postToEdit?.title}</h1>
-            <button type="button" onClick={changeTitle}>edit title</button>
-            {editTitle &&
-                <input defaultValue={postToEdit?.title} {...register("title")}/>
-            }
-        </div>
-       
-
-        <article>
-            <p>{postToEdit?.description}</p>
-            <button type="button" onClick={changeDesc}>edit description</button>
-            {editDesc &&
-            <textarea defaultValue={postToEdit?.description} {...register("description")}/>
-            }
-        </article>
-
+        <h1 className="editText">Edit a post</h1>
+        <div className="editFormContainer">
         <section>
             <NavLink to= "/Profile" state={{clickedUser: postToEdit?.userId}}>
-                <p>@{postToEdit?.username}</p>
-            </NavLink> 
-            <NavLink to= "/Profile" state={{clickedUser: postToEdit?.userId}}>
-                {postToEdit?.pfp!=null && <img  referrerPolicy="no-referrer" src={postToEdit?.pfp || ""} width={30} height={30}/>}
+                {postToEdit?.pfp!=null && <img  referrerPolicy="no-referrer" src={postToEdit?.pfp || ""} className="pfp"/>}
             </NavLink>
+            <NavLink to= "/Profile" state={{clickedUser: postToEdit?.userId}}>
+                <p className="username">@{postToEdit?.username}</p>
+            </NavLink> 
+            
         </section>
+        <form onSubmit={handleSubmit(editButton)}>
+        <div className="titleEdit">
+            <button className="editTitleBtn" type="button" onClick={changeTitle}><img className="editLogo"src="../src/assets/9349889.png"/></button>
+            <h1 className="oldTitle">{postToEdit?.title}</h1>
+            
+        </div>
+        {editTitle &&
+                <textarea className="newTitle" defaultValue={postToEdit?.title} {...register("title")} required/>
+        }
+       
 
-        <button type="button" onClick={deletePost}>delete post</button>
+        <article className="descriptionEdit">
+            <button className="editDescriptionBtn" type="button" onClick={changeDesc}><img className="editLogo"src="../src/assets/9349889.png"/></button>
+            <p className="oldDescription">{postToEdit?.description}</p>
+        </article>
+        {editDesc &&
+            <textarea className="newDescription" defaultValue={postToEdit?.description} {...register("description")}/>
+        }
 
-        <input type="submit"></input>
+        
+
+        <input className="editPostBtn" type="submit"></input>
+        <button className="deletePostBtn" type="button" onClick={deletePost}>delete post</button>
+
+        
         </form>
+        </div>
         </>
     );
 }

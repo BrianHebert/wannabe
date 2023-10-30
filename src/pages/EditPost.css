@@ -1,0 +1,273 @@
+@media (min-width: 1280px){
+    .editFormContainer{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .editText{
+        margin-top: 0px;
+        width: 50%;
+        font-size: 3vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .editLogo{
+        width: 15px;
+    }
+
+
+    .titleEdit{
+        display: flex;
+        padding-top: 5px;
+        height: fit-content;
+        width: 100%;
+        padding-bottom: 5px;
+        
+    }
+    .oldTitle{
+        float: left;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1.8vw;
+    }
+    .editTitleBtn{
+        margin-right: 3px;
+        align-self: center;
+    }
+
+    .newTitle{
+        float: left;
+        clear: left;
+        display: block;
+        width: 100%;
+        padding: 0%;
+        font-size: 1.8vw;
+        margin-bottom: 10px;
+    }
+
+
+    .descriptionEdit{
+        margin-top: 0;
+        float: left;
+        clear: left;
+        display: flex;
+        font-size: 1vw;
+    }
+    .editDescriptionBtn{
+        margin-right: 3px;
+        align-self: center;
+    }
+    .oldDescription{
+        margin-top: 5px;
+    }
+
+    .newDescription{
+        float: left;
+        clear: left;
+        width: 100%;
+        font-size: 1vw;
+        padding: 0%;
+        height: 6vw;
+        display: block;
+        margin-top: 0px;
+    }
+    
+    
+    .deletePostBtn{
+        float: left;
+        font-size: 1vw;
+        
+    }
+    .editPostBtn{
+        float: left;
+        clear: left;
+        font-size: 1vw;
+    }
+}
+
+
+
+
+@media (max-width: 1279px) and (min-width: 901px){
+    .editText{
+        width: 65%;
+        font-size: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .editFormContainer{
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    
+    .editLogo{
+        width: 15px;
+    }
+
+
+    .titleEdit{
+        display: flex;
+        padding-top: 5px;
+        height: fit-content;
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    .oldTitle{
+        float: left;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 3vw;
+    }
+    .editTitleBtn{
+        margin-right: 3px;
+        align-self: center;
+    }
+
+    .newTitle{
+        float: left;
+        clear: left;
+        display: block;
+        width: 100%;
+        padding: 0%;
+        font-size: 3vw;
+        margin-bottom: 10px;
+    }
+
+
+    .descriptionEdit{
+        margin-top: 0px;
+        float: left;
+        clear: left;
+        display: flex;
+        padding-bottom: 10px;
+    }
+    .editDescriptionBtn{
+        margin-right: 3px;
+        align-self: center;
+    }
+    .oldDescription{
+        margin-bottom: 0px;
+        margin-top: 5px;
+        font-size: 1.6vw;
+    }
+
+    .newDescription{
+        float: left;
+        clear: left;
+        width: 100%;
+        padding: 0%;
+        font-size: 1.6vw;
+        height: 10vw;
+        display: block;
+        margin-top: 0px;
+
+        
+    }
+    
+    
+    .deletePostBtn{
+        float: left;
+        font-size: 1.8vw;
+        
+    }
+    .editPostBtn{
+        float: left;
+        clear: left;
+        font-size: 1.8vw;
+    }
+}
+
+
+@media (max-width: 900px){
+    .editText{
+        width: 80%;
+        font-size: 8vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .editFormContainer{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    
+    .editLogo{
+        width: 15px;
+    }
+
+
+    .titleEdit{
+        display: flex;
+        padding-top: 5px;
+        height: fit-content;
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    .oldTitle{
+        float: left;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 5vw;
+    }
+    .editTitleBtn{
+        margin-right: 3px;
+        align-self: center;
+    }
+
+    .newTitle{
+        float: left;
+        clear: left;
+        display: block;
+        width: 100%;
+        padding: 0%;
+        font-size: 5vw;
+        margin-bottom: 10px;
+    }
+
+
+    .descriptionEdit{
+        margin-top: 0px;
+        float: left;
+        clear: left;
+        display: flex;
+        padding-bottom: 10px;
+    }
+    .editDescriptionBtn{
+        margin-right: 3px;
+        align-self: center;
+    }
+    .oldDescription{
+        margin-bottom: 0px;
+        margin-top: 5px;
+        font-size: 3vw;
+    }
+
+    .newDescription{
+        float: left;
+        clear: left;
+        width: 100%;
+        padding: 0%;
+        font-size: 3vw;
+        height: 10vw;
+        display: block;
+        margin-top: 0px;
+
+        
+    }
+    
+    
+    .deletePostBtn{
+        float: left;
+        font-size: 1.8vw;
+        
+    }
+    .editPostBtn{
+        float: left;
+        clear: left;
+        font-size: 1.8vw;
+    }
+}

@@ -7,10 +7,10 @@ export default function CreatePost(){
 
 
     return(
-        <div>
+        <>
             <Navbar />
             <h1 className="createText">Create a post</h1>
             <CreateForm />
-        </div>
+        </>
     )
 }

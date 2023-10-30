@@ -31,32 +31,6 @@ body{
     border: red solid 2px;
 }
 
-section{
-    display: flex;
-}
-.pfp{
-    display: flex;
-    width: 30px;
-    height: 30px;
-    margin-bottom: 0px;
-        
-}
-.username{
-    display: flex;
-    margin-top: 3px;
-    margin-left: 3px;
-    font-size: 18px;
-    margin-bottom: 0px;
-}
-.postTitle{
-    margin-top: 0px;
-    margin-bottom: 0px;
-    
-}
-.postDescription{
-    margin-top: 5px;
-    
-}
 
 .bitconfused{ /* tbh im not sure what this actually is but im using it to get rid of bullet points */
     all: initial;

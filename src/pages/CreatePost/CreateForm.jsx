@@ -62,7 +62,7 @@ export default function CreateForm(){
     return(
         <form onSubmit={handleSubmit(onCreatePost)}>
             {" "}
-            <input className="titleTextbox" onClick={getUser }placeholder="Title..." {...register("title")} required/>
+            <textarea className="titleTextbox" onClick={getUser }placeholder="Title..." {...register("title")} required/>
             <textarea className="descriptionTextBox" placeholder="Description..."{...register("description")}/>
             <input className="createSubmit" type="submit" />
         </form>

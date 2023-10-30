@@ -1,6 +1,7 @@
+
 @media (min-width: 1280px){
 .createText{
-    
+    margin-top: 0px;
     width: 50%;
     font-size: 3vw;
     margin-left: auto;
@@ -35,7 +36,6 @@
 
 @media (max-width: 1279px) and (min-width: 901px){
     .createText{
-        
         width: 65%;
         font-size: 5vw;
         margin-left: auto;
