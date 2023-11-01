@@ -41,6 +41,12 @@
         margin: 0;
         font-size: 1vw;
     }
+    .changeNameError{
+        margin: 0;
+        font-size: 1vw;
+        float: right;
+        clear: right;
+    }
 }
 
 
@@ -88,6 +94,12 @@
         margin: 0;
         font-size: 1.3vw;
     }
+    .changeNameError{
+        margin: 0;
+        font-size: 1.3vw;
+        float: right;
+        clear: right;
+    }
 }
 
 
@@ -124,15 +136,24 @@
     .displayNameBtn{
         border: 2px black solid;
         float: right;
+        width: 32%;
         padding: 0;
         margin: 0;
         font-size: 1.6vw;
     }
     .displayNameInput{
         border: 2px black solid;
+        width: 31%;
         float: right;
+        clear: right;
         padding: 0;
         margin: 0;
         font-size: 1.6vw;
+    }
+    .changeNameError{
+        margin: 0;
+        font-size: 1.6vw;
+        float: right;
+        clear: right;
     }
 }

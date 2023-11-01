@@ -40,7 +40,7 @@ export default function Profile(props){
     const updated_at_timestamp = serverTimestamp() //creates a timestamp
 
     const schema = yup.object().shape({
-        displayName: yup.string().required("You must add a display name."),
+        displayName: yup.string().required("You must add a display name.").max(24,'cannot be longer than 24 chracters'),
     })
 
     const { register, handleSubmit, formState: { errors }} = useForm({
@@ -136,12 +136,14 @@ export default function Profile(props){
         {createOrUpdate == false && 
         <form onSubmit={handleSubmit(createDisplayName)}>
         <div className="displayNameBtnDiv"><button className="displayNameBtn">Change Display Name</button></div>
-        <div className="displayNameInputDiv"><input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]} placeholder="displayName..." {...register("displayName")} className="displayNameInput"/></div> {/* the onclick function calls it after the displayName state is updated */}    
+        <input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]} placeholder="displayName..." {...register("displayName")} className="displayNameInput" required/> {/* the onclick function calls it after the displayName state is updated */}    
+        {errors.displayName?.message && <p className="changeNameError" >{errors.displayName?.message}</p>}
         </form> || 
         createOrUpdate == true && 
         <form onSubmit={handleSubmit(updateDisplayName)}>
         <div className="displayNameBtnDiv"><button className="displayNameBtn">Change Display Name</button></div>
-        <div className="displayNameInputDiv"><input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]}  placeholder="displayName..." {...register("displayName")} className="displayNameInput"/></div> {/* the onclick function calls it after the displayName state is updated */}    
+        <input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]}  placeholder="displayName..." {...register("displayName")} className="displayNameInput" required/> {/* the onclick function calls it after the displayName state is updated */}    
+        {errors.displayName?.message && <p className="changeNameError">{errors.displayName?.message}</p>}
         </form>
         }
         
