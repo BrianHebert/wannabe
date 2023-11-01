@@ -154,7 +154,7 @@ export default function Profile(props){
         { clickedUser != user?.uid && //if the user wants to look at a profile this will show up
         <div className="everythingDifUserProfile">
             <img  referrerPolicy="no-referrer" src={ clickedPicture || ""} className="ProfilePagePFP"/>
-            <h1>{clickedName}</h1>
+            <h1 className="userNameProfile">{clickedName}</h1>
         </div>
         }
         {postsList?.map((post) => (<Post key={post.id} post={post}/> ))} {/*this loops through every post in the postLists array and returns the post component */}

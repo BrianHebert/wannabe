@@ -211,7 +211,7 @@
         float: left;
         margin-top: 0;
         margin-bottom: 0;
-        font-size: 6.5vw;
+        font-size: 5.5vw;
     }
     .editTitleBtn{
         margin-right: 3px;
@@ -224,7 +224,7 @@
         display: block;
         width: 100%;
         padding: 0%;
-        font-size: 6.5vw;
+        font-size: 5.5vw;
         margin-bottom: 10px;
     }
 
@@ -243,7 +243,7 @@
     .oldDescription{
         margin-bottom: 0px;
         margin-top: 5px;
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
     .newDescription{
@@ -251,7 +251,7 @@
         clear: left;
         width: 100%;
         padding: 0%;
-        font-size: 5vw;
+        font-size: 4vw;
         height: 10vw;
         display: block;
         margin-top: 0px;

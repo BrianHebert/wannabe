@@ -13,6 +13,7 @@
         width: 50%;
         margin-left: auto;
         margin-right: auto;
+        height: 4.85vw;
     
     }
     .ProfilePagePFP{
@@ -61,10 +62,10 @@
     }
     .everythingDifUserProfile{
         border: 2px black solid;
-        width: 50%;
+        width: 70%;
         margin-left: auto;
         margin-right: auto;
-    
+        height: 6.6vw;
     }
     .ProfilePagePFP{
         width: 10%;
@@ -114,10 +115,10 @@
     }
     .everythingDifUserProfile{
         border: 2px black solid;
-        width: 50%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
-    
+        height: 7.5vw;
     }
     .ProfilePagePFP{
         width: 10%;
