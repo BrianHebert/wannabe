@@ -6,6 +6,10 @@ import { auth, db } from "../config/firebase.js"
 import { set } from "react-hook-form"
 import "./displayposts.css"
 
+const linkStyle ={
+    textDecoration: "none"
+}
+
 
 export default function Post(props){
     
@@ -42,7 +46,7 @@ export default function Post(props){
             <NavLink to= "/Profile" state={{clickedUser: props.post.userId, clickedName: nameDisplayed, clickedPicture: props.post.pfp}}>
                 {props.post.pfp!=null && <img  referrerPolicy="no-referrer" src={props.post.pfp || ""} className="pfp"/>}
             </NavLink>
-            <NavLink to= "/Profile" state={{clickedUser: props.post.userId, clickedName: nameDisplayed, clickedPicture: props.post.pfp}}>
+            <NavLink to= "/Profile" state={{clickedUser: props.post.userId, clickedName: nameDisplayed, clickedPicture: props.post.pfp}} style={linkStyle}>
                 <p className="username">@{nameDisplayed}</p>
             </NavLink> 
         </section>
@@ -55,7 +59,7 @@ export default function Post(props){
         </article>
 
         { props.post.userId == user?.uid &&
-            <NavLink to= "/EditPost" state={{docId: props.post.id}}>EditPost</NavLink>
+            <NavLink to= "/EditPost" state={{docId: props.post.id}} style={linkStyle}><p className="editBtn">EditPost</p></NavLink>
         }
 
         </div>

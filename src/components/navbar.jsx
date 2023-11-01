@@ -8,28 +8,43 @@ import styled from "styled-components";
 import {  collection, getDocs,  query, where } from "firebase/firestore"
 import { useNavigate } from "react-router-dom";
 
+const linkStyle ={
+    textDecoration: "none"
+}
+
 const NavbarStyle = styled.div`
 @media (min-width: 1280px){
    border: black 2px solid;
-   float: left;
    width: 20%;
    height: 100%;
    position: fixed;
   
    h1{
     font-size: 1.5vw;
+    padding-left: 2%;
     margin-top:0px;
     width: 26%;
+    color: black;
+   }
+   h1:hover{
+    background-color: lightgrey;
+    border-radius: 25px;
+    cursor:pointer;
    }
 
    .home{
     float: right;
   
    }
+   
+   .loginBtn{
+    float: right;
+    clear: right;
+   }
+
 
    .profile{
     float: right;
-
     clear: right;
    }
 
@@ -60,7 +75,6 @@ const NavbarStyle = styled.div`
 
 @media (max-width: 1279px) and (min-width: 901px){
    border: black 2px solid;
-   float: left;
    width: 13%;
    height: 100%;
    position: fixed;
@@ -68,11 +82,23 @@ const NavbarStyle = styled.div`
    h1{
     font-size: 2vw;
     margin-top: 0px;
-    width: 50%;
+    padding-left: 4%;
+    width: 52%;
+    color: black;
+   }
+   h1:hover{
+    background-color: lightgrey;
+    border-radius: 25px;
+    cursor:pointer;
    }
 
    .home{
     float: right;
+   }
+
+   .loginBtn{
+    float: right;
+    clear: right;
    }
 
    .profile{
@@ -105,11 +131,19 @@ const NavbarStyle = styled.div`
 
 @media (max-width: 900px){
     border: solid red 2px;
+    text-decoration: none;
     h1{
         font-size: 4vw;
         margin-top: 0px;
         margin-left: 5px;
         margin-right: 5px;
+        padding: 5px;
+        color: black;
+    }
+    h1:hover{
+        background-color: lightgrey;
+        border-radius: 25px;
+        cursor:pointer;
     }
     .imgContainer{
         display: none;
@@ -117,7 +151,9 @@ const NavbarStyle = styled.div`
     .everythingInNavbar{
         display: flex;
         justify-content: center;
+        
     }
+
 
 
 }
@@ -161,6 +197,10 @@ export default function Navbar(props){
         nameDisplayed = user?.displayName
     }
 
+    function signOutAndLoadHome(){
+        signUserOut()
+        window.location.assign("/")
+    }
     
 
     return(
@@ -171,25 +211,25 @@ export default function Navbar(props){
         {loading == false &&
         <NavbarStyle onLoad={getUser}>
             <div className="everythingInNavbar">
-            <NavLink to={'/'} onClick={() => window.location='/'.reload()}><h1 className="home">HOME</h1></NavLink>
+            <NavLink  to={'/'} onClick={() => window.location='/'.reload()} style={linkStyle}><h1 className="home">HOME</h1></NavLink>
             {!user && //because the user becomes true when logged in it will no longer display the login button
             <div>
-            <button onClick={signInWithGoogle}>Login</button>
+            <h1  className="loginBtn" onClick={signInWithGoogle}>Login</h1 >
             </div>}
 
             {user && 
             <div>
-            <NavLink to= "/Profile" state={{clickedUser: user?.uid}}>
+            <NavLink  to= "/Profile" state={{clickedUser: user?.uid}} style={linkStyle}>
             <div className="imgContainer"> <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} /></div>
             <h1 className="profile">Profile</h1>
             </NavLink>
             </div>}
             
-            {user && <NavLink to= "/CreatePost"> <h1 className="create">Create</h1> </NavLink>}
+            {user && <NavLink to= "/CreatePost" style={linkStyle}> <h1 className="create">Create</h1> </NavLink>}
 
             {user && 
             <div>
-            <h1 className="logout" onClick={signUserOut}>Logout</h1>
+            <h1 className="logout" onClick={signOutAndLoadHome}>Logout</h1>
             </div>}
             </div>
 

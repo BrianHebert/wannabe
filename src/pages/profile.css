@@ -1,6 +1,138 @@
-.everythingProfile{
+
+@media (min-width: 1280px){
+    .everythingSameUserProfile{
+        border: 2px black solid;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 4.85vw;
+        
+    }
+    .everythingDifUserProfile{
+        border: 2px black solid;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    
+    }
+    .ProfilePagePFP{
+        width: 10%;
+        float: left;
+        
+    }
+    .userNameProfile{
     border: 2px black solid;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    width: fit-content;
+    float: left;
+    padding: 0;
+    font-size: 1.8vw;
+    }
+    .displayNameBtn{
+        border: 2px black solid;
+        float: right;
+        padding: 0;
+        margin: 0;
+        font-size: 1vw;
+    }
+    .displayNameInput{
+        border: 2px black solid;
+        float: right;
+        padding: 0;
+        margin: 0;
+        font-size: 1vw;
+    }
+}
+
+
+@media (max-width: 1279px) and (min-width: 901px){
+    .everythingSameUserProfile{
+        border: 2px black solid;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 6.6vw;
+        
+    }
+    .everythingDifUserProfile{
+        border: 2px black solid;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    
+    }
+    .ProfilePagePFP{
+        width: 10%;
+        float: left;
+        
+    }
+    .userNameProfile{
+        border: 2px black solid;
+        width: fit-content;
+        float: left;
+        padding: 0;
+        font-size: 3vw;
+        margin-top: 2%;
+        margin-bottom: 0;
+    }
+    .displayNameBtn{
+        border: 2px black solid;
+        float: right;
+        padding: 0;
+        margin: 0;
+        font-size: 1.3vw;
+    }
+    .displayNameInput{
+        border: 2px black solid;
+        float: right;
+        padding: 0;
+        margin: 0;
+        font-size: 1.3vw;
+    }
+}
+
+
+@media (max-width: 900px){
+    .everythingSameUserProfile{
+        border: 2px black solid;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 7.5vw;
+        
+    }
+    .everythingDifUserProfile{
+        border: 2px black solid;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    
+    }
+    .ProfilePagePFP{
+        width: 10%;
+        float: left;
+        
+    }
+    .userNameProfile{
+        border: 2px black solid;
+        width: fit-content;
+        float: left;
+        padding: 0;
+        font-size: 3vw;
+        margin-bottom: 0;
+        margin-top: 2%;
+    }
+    .displayNameBtn{
+        border: 2px black solid;
+        float: right;
+        padding: 0;
+        margin: 0;
+        font-size: 1.6vw;
+    }
+    .displayNameInput{
+        border: 2px black solid;
+        float: right;
+        padding: 0;
+        margin: 0;
+        font-size: 1.6vw;
+    }
 }

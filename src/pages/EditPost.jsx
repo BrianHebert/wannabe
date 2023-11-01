@@ -9,6 +9,10 @@ import { auth, db } from "../config/firebase.js"
 import Navbar from "../components/navbar.jsx"
 import "./editpost.css"
 
+const linkStyle ={
+    textDecoration: "none"
+}
+
 export default function EditPost(props) {
     
     const location = useLocation();
@@ -77,14 +81,14 @@ export default function EditPost(props) {
             <NavLink to= "/Profile" state={{clickedUser: postToEdit?.userId}}>
                 {postToEdit?.pfp!=null && <img  referrerPolicy="no-referrer" src={postToEdit?.pfp || ""} className="pfp"/>}
             </NavLink>
-            <NavLink to= "/Profile" state={{clickedUser: postToEdit?.userId}}>
+            <NavLink to= "/Profile" state={{clickedUser: postToEdit?.userId}} style={linkStyle}>
                 <p className="username">@{postToEdit?.username}</p>
             </NavLink> 
             
         </section>
         <form onSubmit={handleSubmit(editButton)}>
         <div className="titleEdit">
-            <button className="editTitleBtn" type="button" onClick={changeTitle}><img className="editLogo"src="../src/assets/9349889.png"/></button>
+            <button className="editTitleBtn" type="button" onClick={changeTitle}><img className="editLogo"src="https://i.imgur.com/LzL7hDG.png?1"/></button>
             <h1 className="oldTitle">{postToEdit?.title}</h1>
             
         </div>
@@ -94,7 +98,7 @@ export default function EditPost(props) {
        
 
         <article className="descriptionEdit">
-            <button className="editDescriptionBtn" type="button" onClick={changeDesc}><img className="editLogo"src="../src/assets/9349889.png"/></button>
+            <button className="editDescriptionBtn" type="button" onClick={changeDesc}><img className="editLogo" src="https://i.imgur.com/LzL7hDG.png?1"/></button>
             <p className="oldDescription">{postToEdit?.description}</p>
         </article>
         {editDesc &&

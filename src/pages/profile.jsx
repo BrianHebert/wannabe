@@ -129,27 +129,30 @@ export default function Profile(props){
         < div onLoad={getUser}>
 
         { clickedUser == user?.uid && //if the user is looking at their own profile
-        <div className="everythingProfile" onLoad={getPosts}>
+        <div className="everythingSameUserProfile" onLoad={getPosts}>
+        <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} className="ProfilePagePFP"/>
+        <h1 className="userNameProfile">{nameDisplayed}</h1>
 
-        {createOrUpdate == false && <form onSubmit={handleSubmit(createDisplayName)}>
-        <input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]} placeholder="displayName..." {...register("displayName")}/> {/* the onclick function calls it after the displayName state is updated */}
-        <button>Change Display Name</button>    
+        {createOrUpdate == false && 
+        <form onSubmit={handleSubmit(createDisplayName)}>
+        <div className="displayNameBtnDiv"><button className="displayNameBtn">Change Display Name</button></div>
+        <div className="displayNameInputDiv"><input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]} placeholder="displayName..." {...register("displayName")} className="displayNameInput"/></div> {/* the onclick function calls it after the displayName state is updated */}    
         </form> || 
-        createOrUpdate == true && <form onSubmit={handleSubmit(updateDisplayName)}>
-        <input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]}  placeholder="displayName..." {...register("displayName")}/> {/* the onclick function calls it after the displayName state is updated */}
-        <button>Change Display Name</button>    
+        createOrUpdate == true && 
+        <form onSubmit={handleSubmit(updateDisplayName)}>
+        <div className="displayNameBtnDiv"><button className="displayNameBtn">Change Display Name</button></div>
+        <div className="displayNameInputDiv"><input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]}  placeholder="displayName..." {...register("displayName")} className="displayNameInput"/></div> {/* the onclick function calls it after the displayName state is updated */}    
         </form>
         }
-        <h1>{nameDisplayed}</h1>
-        <img  referrerPolicy="no-referrer" src={user?.photoURL || ""} width={30} height={30}/>
+        
         </div>
         
         }
 
         { clickedUser != user?.uid && //if the user wants to look at a profile this will show up
-        <div>
+        <div className="everythingDifUserProfile">
+            <img  referrerPolicy="no-referrer" src={ clickedPicture || ""} className="ProfilePagePFP"/>
             <h1>{clickedName}</h1>
-            <img  referrerPolicy="no-referrer" src={ clickedPicture || ""} className="pfp"/>
         </div>
         }
         {postsList?.map((post) => (<Post key={post.id} post={post}/> ))} {/*this loops through every post in the postLists array and returns the post component */}

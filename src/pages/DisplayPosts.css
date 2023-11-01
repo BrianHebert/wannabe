@@ -19,17 +19,20 @@ section{
     display: flex;
     margin-top: 3px;
     margin-left: 3px;
-    font-size: 18px;
-    margin-bottom: 0px;
-
+    font-size: 1vw;
+    margin-bottom: 0px; 
 }
 .postTitle{
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 1.8vw;
 }
 .postDescription{
     margin-top: 5px;
-
+    font-size: 1.2vw;
+}
+.editBtn{
+    margin: 0;
 }
 }
 
@@ -55,16 +58,20 @@ section{
         display: flex;
         margin-top: 3px;
         margin-left: 3px;
-        font-size: 18px;
+        font-size: 1.5vw;
         margin-bottom: 0px;
     }
     .postTitle{
         margin-top: 0px;
         margin-bottom: 0px;
-        
+        font-size: 3vw;
     }
     .postDescription{
         margin-top: 5px;
+        font-size: 1.7vw;
+    }
+    .editBtn{
+        margin: 0;
     }
 }
 @media (max-width: 900px){
@@ -89,15 +96,20 @@ section{
         display: flex;
         margin-top: 3px;
         margin-left: 3px;
-        font-size: 18px;
+        font-size: 3vw;
         margin-bottom: 0px;
     }
     .postTitle{
         margin-top: 0px;
         margin-bottom: 0px;
+        font-size: 5.5vw;
         
     }
     .postDescription{
         margin-top: 5px;
+        font-size: 4vw;
+    }
+    .editBtn{
+        margin: 0;
     }
 }
