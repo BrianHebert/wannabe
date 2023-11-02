@@ -19,17 +19,17 @@ section{
     display: flex;
     margin-top: 3px;
     margin-left: 3px;
-    font-size: 1vw;
+    font-size: 20px;
     margin-bottom: 0px; 
 }
 .postTitle{
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 1.8vw;
+    font-size: 35px;
 }
 .postDescription{
     margin-top: 5px;
-    font-size: 1.2vw;
+    font-size: 25px;
 }
 .editBtn{
     margin: 0;
@@ -58,17 +58,17 @@ section{
         display: flex;
         margin-top: 3px;
         margin-left: 3px;
-        font-size: 1.5vw;
+        font-size: 20px;
         margin-bottom: 0px;
     }
     .postTitle{
         margin-top: 0px;
         margin-bottom: 0px;
-        font-size: 3vw;
+        font-size: 35px;
     }
     .postDescription{
         margin-top: 5px;
-        font-size: 1.7vw;
+        font-size: 25px;
     }
     .editBtn{
         margin: 0;
@@ -83,8 +83,8 @@ section{
     }
     .pfp{
         display: flex;
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         margin-bottom: 0px;
             
     }
@@ -93,21 +93,21 @@ section{
     }
 
     .username{
-        display: flex;
-        margin-top: 3px;
-        margin-left: 3px;
-        font-size: 3vw;
+        
+        margin-top: 2px;
+        margin-left: 2px;
+        font-size: 15px;
         margin-bottom: 0px;
     }
     .postTitle{
         margin-top: 0px;
         margin-bottom: 0px;
-        font-size: 5.5vw;
+        font-size: 25px;
         
     }
     .postDescription{
         margin-top: 5px;
-        font-size: 4vw;
+        font-size: 15px;
     }
     .editBtn{
         margin: 0;

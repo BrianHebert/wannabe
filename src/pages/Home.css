@@ -2,56 +2,53 @@ body{
     display: block;
 }
 @media (min-width: 1280px){
-.allOfSearch { /* This is what holds everything that involves the actual search bar*/
-    position: fixed;
-    right: 8px;
-    border: red solid 2px;
-    width: 20%;
-}
-.searchInput{
-    font-size: 1vw;
-    height: 1.5vw;
-    width: 60%;
-    float: left;
-}
-.searchSubmit{
-    display: none;
-}
-.searchReset{
-    display: none;
-}
-.searchResults{
-    all: initial;
-    display: block;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.post{
-    border: red solid 2px;
-}
+    .allOfSearch { /* This is what holds everything that involves the actual search bar*/
+        margin-bottom: 10px;
+    }
+    .searchInput{
+        width: 50%;
+        font-size: 22px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .searchSubmit{
+        display: none;
+    }
+    .searchReset{
+        display: none;
+    }
+    .searchResults{
+        all: initial;
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post{
+        border: red solid 2px;
+    }
 
 
-.bitconfused{ /* tbh im not sure what this actually is but im using it to get rid of bullet points */
-    all: initial;
-}
-.allPosts{
-    border: red solid 2px;
-}
+    .bitconfused{ /* tbh im not sure what this actually is but im using it to get rid of bullet points */
+        all: initial;
+    }
+    .allPosts{
+        
+    }
 }
 
 @media (max-width: 1279px) and (min-width: 901px){
     .allOfSearch { /* This is what holds everything that involves the actual search bar*/
-        position: fixed;
-        right: 8px;
-        border: red solid 2px;
-        width: 13%;
+        margin-bottom: 10px;
     }
     .searchInput{
-        font-size: 1vw;
-        height: 2vw;
-        width: 90%;
-        float: left;
+        font-size: 18px;
+        width: 70%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
     }
     .searchSubmit{
         display: none;
@@ -73,7 +70,7 @@ body{
         all: initial;
     }
     .allPosts{
-        border: red solid 2px;
+        
     }
 }
 
@@ -84,8 +81,8 @@ body{
     }
     .searchInput{
         width: 80.5%;
-        font-size: 4vw;
-        height: 8vw;
+        font-size: 25px;
+        
         display: block;
         margin-left: auto;
         margin-right: auto;

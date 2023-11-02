@@ -5,48 +5,52 @@
         width: 50%;
         margin-left: auto;
         margin-right: auto;
-        height: 4.85vw;
-        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 10px;
     }
     .everythingDifUserProfile{
         border: 2px black solid;
         width: 50%;
         margin-left: auto;
         margin-right: auto;
-        height: 4.85vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 10px;
     
     }
     .ProfilePagePFP{
-        width: 10%;
-        float: left;
+        
         
     }
+    .profileForm{
+        display: flex;
+        flex-direction: row-reverse;
+        border: 2px black solid;
+    }
     .userNameProfile{
-    border: 2px black solid;
-    width: fit-content;
-    float: left;
-    padding: 0;
-    font-size: 1.8vw;
+        border: 2px black solid;
+    
     }
     .displayNameBtn{
-        border: 2px black solid;
-        float: right;
-        padding: 0;
-        margin: 0;
-        font-size: 1vw;
+        
+        
+        
     }
     .displayNameInput{
-        border: 2px black solid;
-        float: right;
-        padding: 0;
-        margin: 0;
-        font-size: 1vw;
+       
+        
+        
     }
     .changeNameError{
         margin: 0;
-        font-size: 1vw;
-        float: right;
-        clear: right;
+        border: 2px black solid;
     }
 }
 
@@ -57,7 +61,12 @@
         width: 70%;
         margin-left: auto;
         margin-right: auto;
-        height: 6.6vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 10px;
         
     }
     .everythingDifUserProfile{
@@ -65,41 +74,38 @@
         width: 70%;
         margin-left: auto;
         margin-right: auto;
-        height: 6.6vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 10px;
     }
     .ProfilePagePFP{
-        width: 10%;
-        float: left;
+        width: 70px;
+        
         
     }
     .userNameProfile{
         border: 2px black solid;
-        width: fit-content;
-        float: left;
-        padding: 0;
-        font-size: 3vw;
-        margin-top: 2%;
-        margin-bottom: 0;
+        
+    }
+    .profileForm{
+        display: flex;
+        justify-content: flex-end;
+        border: 2px black solid;
     }
     .displayNameBtn{
-        border: 2px black solid;
-        float: right;
-        padding: 0;
-        margin: 0;
-        font-size: 1.3vw;
+        
+        
     }
     .displayNameInput{
-        border: 2px black solid;
-        float: right;
-        padding: 0;
-        margin: 0;
-        font-size: 1.3vw;
+       
+        
     }
     .changeNameError{
         margin: 0;
-        font-size: 1.3vw;
-        float: right;
-        clear: right;
+        
     }
 }
 
@@ -110,7 +116,14 @@
         width: 80%;
         margin-left: auto;
         margin-right: auto;
-        height: 7.5vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 5px;
+        row-gap: 0px;
+        
         
     }
     .everythingDifUserProfile{
@@ -118,43 +131,44 @@
         width: 80%;
         margin-left: auto;
         margin-right: auto;
-        height: 7.5vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 5px;
     }
     .ProfilePagePFP{
-        width: 10%;
-        float: left;
+        width: 15%;
+        margin: 0px;
         
     }
     .userNameProfile{
         border: 2px black solid;
-        width: fit-content;
-        float: left;
+        margin: 0px;
+        font-size: 14px;
+    }
+    .profileForm{
+        display: flex;
+        justify-content: flex-end;
+        border: 2px black solid;
         padding: 0;
-        font-size: 3vw;
-        margin-bottom: 0;
-        margin-top: 2%;
+        margin: 0;
     }
     .displayNameBtn{
-        border: 2px black solid;
-        float: right;
-        width: 32%;
-        padding: 0;
-        margin: 0;
-        font-size: 1.6vw;
+        margin-top: 0;
+        font-size: 12px;
+        
+        
     }
     .displayNameInput{
-        border: 2px black solid;
-        width: 31%;
-        float: right;
-        clear: right;
+        
+        font-size: 12px;
         padding: 0;
-        margin: 0;
-        font-size: 1.6vw;
+        margin: 0px;
     }
     .changeNameError{
-        margin: 0;
-        font-size: 1.6vw;
-        float: right;
-        clear: right;
+        margin: 0px;
+        font-size: 12px;
     }
 }
