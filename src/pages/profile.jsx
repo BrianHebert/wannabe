@@ -134,14 +134,14 @@ export default function Profile(props){
         <h1 className="userNameProfile">{nameDisplayed}</h1>
 
         {createOrUpdate == false && 
-        <form onSubmit={handleSubmit(createDisplayName)}>
+        <form className="profileForm" onSubmit={handleSubmit(createDisplayName)}>
         <input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]} placeholder="displayName..." {...register("displayName")} className="displayNameInput" required/> {/* the onclick function calls it after the displayName state is updated */}   
         <div className="displayNameBtnDiv"><button className="displayNameBtn">Change Display Name</button></div>
          
         {errors.displayName?.message && <p className="changeNameError" >{errors.displayName?.message}</p>}
         </form> || 
         createOrUpdate == true && 
-        <form onSubmit={handleSubmit(updateDisplayName)}>
+        <form className="profileForm" onSubmit={handleSubmit(updateDisplayName)}>
         <input onClick={() => [findUserDoc(), areWeCreatingOrUpdating()]}  placeholder="displayName..." {...register("displayName")} className="displayNameInput" required/> {/* the onclick function calls it after the displayName state is updated */}
         <div className="displayNameBtnDiv"><button className="displayNameBtn">Change Display Name</button></div>
             

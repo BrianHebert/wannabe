@@ -24,10 +24,10 @@ const NavbarStyle = styled.div`
     padding-left: 2%;
     margin-top:0px;
     width: 26%;
-    color: black;
+    color: white;
    }
    h1:hover{
-    background-color: lightgrey;
+    background-color: rgb(64, 69, 79);
     border-radius: 25px;
     cursor:pointer;
    }
@@ -84,10 +84,10 @@ const NavbarStyle = styled.div`
     margin-top: 0px;
     padding-left: 4%;
     width: 52%;
-    color: black;
+    color: white;
    }
    h1:hover{
-    background-color: lightgrey;
+    background-color: rgb(64, 69, 79);
     border-radius: 25px;
     cursor:pointer;
    }
@@ -138,10 +138,10 @@ const NavbarStyle = styled.div`
         margin-left: 5px;
         margin-right: 5px;
         padding: 5px;
-        color: black;
+        color: white;
     }
     h1:hover{
-        background-color: lightgrey;
+        background-color: rgb(64, 69, 79);
         border-radius: 25px;
         cursor:pointer;
     }
